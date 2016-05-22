@@ -26,11 +26,19 @@ export class HomeComponent implements OnInit {
             .then(posts => this.posts = posts);
     }
 
-    selectPost(post: Post){
+    selectPostComments(post: Post){
        this.router.navigate(['WatchPost',{id: post.id}]);
     }
 
     removePost(index: number){
       this.postService.removePost(index);
+    }
+
+    upVotesPost(post: Post){
+      this.postService.upVotesPost(post);
+    }
+
+    downVotesPost(post: Post){
+      this.postService.downVotesPost(post);
     }
 }

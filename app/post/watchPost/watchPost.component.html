@@ -9,7 +9,7 @@
 </div>
 
 
-<div *ngFor="let comment of post.comments; #index = index">
+<div *ngFor="let comment of post.comments; let index = index">
     <div class="panel panel-default">
         <div class="panel-heading">
             <h5>
@@ -30,11 +30,11 @@
         <div class="panel-footer">
             <div>
                 <span>
-                    <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span>
-                    <span class="glyphicon glyphicon-thumbs-down" ng-click="decrementUpvotes(comment)"></span>
+                    <span class="glyphicon glyphicon-thumbs-up" (click)="upVotesComment(index)"></span>
+                    <span class="glyphicon glyphicon-thumbs-down" (click)="downVotesComment(index)"></span>
                     {{comment.upvotes}}
 
-                    <span class="pull-right">                  
+                    <span class="pull-right">
                         <button class="btn btn-warning btn-xs" (click)="removeComment(post, index)">
                             <span class="glyphicon glyphicon-trash"></span>
                             Delete

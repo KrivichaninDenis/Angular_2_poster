@@ -26,4 +26,12 @@ export class WatchPostComponent implements OnInit{
   removeComment(post: Post, index: number){
     this.postService.removeComment(post, index);
   }
+
+  upVotesComment(index: number){
+    this.postService.upVotesComment(this.post.comments[index]);
+  }
+
+  downVotesComment(index: number){
+    this.postService.downVotesComment(this.post.comments[index]);
+  }
 }
