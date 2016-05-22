@@ -4,6 +4,7 @@
 import { Component } from '@angular/core';
 import {PostService} from '../post.service';
 import {Post} from '../post';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'addPost',

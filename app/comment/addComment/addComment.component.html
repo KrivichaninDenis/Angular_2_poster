@@ -1,0 +1,12 @@
+<form  style="margin-top:30px;">
+
+    <h3>Add a new comment</h3>
+
+    <div class="form-group">
+        <input type="text"
+               class="form-control"
+               placeholder="Comment"
+               [(ngModel)]="comment.body"/>
+    </div>
+    <button (click)="addComment()" type="submit" class="btn btn-primary">Post</button>
+</form>

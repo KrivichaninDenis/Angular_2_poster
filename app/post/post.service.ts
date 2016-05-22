@@ -1,7 +1,7 @@
 import {Post} from './post';
 import {Comment} from '../comment/comment';
 import {Injectable} from '@angular/core'
-import {Posts} from './posts';
+import {POSTS} from './posts';
 
 
 @Injectable()
@@ -9,10 +9,20 @@ export class PostService{
 
 
   getPosts(){
-    return Promise.resolve(Posts);
+    return Promise.resolve(POSTS);
   }
 
   addPost(Post){
-    Posts.push(Post);
+    POSTS.push(Post);
+  }
+
+  getPost(id: number){
+    return Promise.resolve(POSTS).then(
+            posts => posts.filter(post => post.id === id)[0]
+        );
+  }
+
+  addComment(post: Post, comment: Comment){
+    post.comments.push(comment);
   }
 };

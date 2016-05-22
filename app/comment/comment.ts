@@ -1,3 +1,6 @@
 export class Comment{
-  body: String;
+  id: number;
+  body: string;
+  author: string;
+  upvotes: number;
 }

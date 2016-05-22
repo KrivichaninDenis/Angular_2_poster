@@ -1,0 +1,50 @@
+<div *ngIf="post">
+<div class="page-header">
+
+    <a href="http://{{post.link}}">
+        <div class="panel-heading ">
+            <h2>{{post.title}}</h2>
+        </div>
+    </a>
+</div>
+
+
+<div *ngFor="let comment of post.comments">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5>
+                <em>
+                    {{comment.author}}
+                </em>
+            </h5>
+        </div>
+
+        <div class="panel-body">
+            <h6>
+                <strong>
+                    {{comment.body}}
+                </strong>
+            </h6>
+        </div>
+
+        <div class="panel-footer">
+            <div>
+                <span>
+                    <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span>
+                    <span class="glyphicon glyphicon-thumbs-down" ng-click="decrementUpvotes(comment)"></span>
+                    {{comment.upvotes}}
+
+                    <span class="pull-right">
+                        <button class="btn btn-warning btn-xs" ng-click="removeComment(post, comment, $index)">
+                            <span class="glyphicon glyphicon-trash"></span>
+                            Delete
+                        </button>
+                    </span>
+
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<addComment> </addComment>
+</div>

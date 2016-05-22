@@ -5,12 +5,16 @@ import { Component } from '@angular/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 import {HomeComponent} from './home/home.component';
 import {AddPostComponent} from './post/addPost/addPost.component';
+import {WatchPostComponent} from './post/watchPost/watchPost.component';
 import {PostService} from './post/post.service'
+
 
 @Component({
     selector: 'app',
     templateUrl: 'app/app.component.html',
-    directives: [ROUTER_DIRECTIVES],
+    directives: [
+      ROUTER_DIRECTIVES
+    ],
     providers: [
         ROUTER_PROVIDERS,
         PostService]
@@ -27,6 +31,11 @@ import {PostService} from './post/post.service'
     path: "/addPost",
     name: "AddPost",
     component: AddPostComponent
+  },
+  {
+    path:"/watchPost/:id",
+    name: "WatchPost",
+    component: WatchPostComponent
   }
 ])
 
