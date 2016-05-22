@@ -6,5 +6,6 @@ export class Post {
     link: string;
     author: string;
     description: string;
+    upvotes: number;
     comments: Comment[];
 }

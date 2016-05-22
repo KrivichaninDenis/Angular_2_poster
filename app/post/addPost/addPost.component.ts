@@ -21,6 +21,8 @@ export class AddPostComponent {
 
   addPost(){
     if (this.post.title != '' && this.post.description != '' && this.post.link != ''){
+      this.post.id=5;
+      this.post.upvotes = 0;
       this.postService.addPost(this.post);
     }
     this.goBack();

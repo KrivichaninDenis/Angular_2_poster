@@ -22,4 +22,8 @@ export class WatchPostComponent implements OnInit{
       this.postService.getPost(id)
           .then(post => this.post = post);
   }
+
+  removeComment(post: Post, index: number){
+    this.postService.removeComment(post, index);
+  }
 }

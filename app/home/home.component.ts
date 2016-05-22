@@ -29,4 +29,8 @@ export class HomeComponent implements OnInit {
     selectPost(post: Post){
        this.router.navigate(['WatchPost',{id: post.id}]);
     }
+
+    removePost(index: number){
+      this.postService.removePost(index);
+    }
 }

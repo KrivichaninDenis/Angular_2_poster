@@ -2,7 +2,7 @@
     <h1>All Posts</h1>
 
     <div class="panel-group"
-         *ngFor="let post of posts" >
+         *ngFor="let post of posts; #index = index" >
         <div class="panel panel-default ">
             <div class="panel-heading">
                 <!--ng-href={{getPostLink(post)}}-->
@@ -36,8 +36,8 @@
                     <a (click) = "selectPost(post)">Comments</a>
                 </span>
 
-                <span class="col-md-offset-8">
-                    <button class="btn btn-warning" ng-click="removePost(post, $index)">
+                <span class="col-md-offset-8">                
+                    <button class="btn btn-warning" (click)="removePost(index)">
                         <span class="glyphicon glyphicon-trash"></span>
                         Delete
                     </button>
