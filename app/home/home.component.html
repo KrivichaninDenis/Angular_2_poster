@@ -1,8 +1,8 @@
-<div class="page-header">
+<div class="page-header" >
     <h1>All Posts</h1>
-
-    <div class="panel-group"
-         *ngFor="let post of posts; let index = index" >
+    <div  class="panel-group"
+         *ngFor="let post of posts    
+         ; let index = index" >
         <div class="panel panel-default ">
             <div class="panel-heading">
                 <!--ng-href={{getPostLink(post)}}-->
@@ -15,8 +15,10 @@
                 <p class="lead">Description:</p>
                 <span>{{post.description}}</span>
 
-                <footer ng-show="post.author">
-                    <span>{{post.author }}</span>
+                <footer *ngIf="post.author && post.date">
+                    <span>
+                      {{post.author }} - <strong> Time: {{post.date | date:'medium'}}</strong>
+                    </span>
                 </footer>
             </blockquote>
 
@@ -45,6 +47,7 @@
                 </div>
             </div>
         </div>
-
     </div>
+
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>

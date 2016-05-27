@@ -1,28 +1,31 @@
+/**
+ * Created by КРИВИЧАНИН on 27.05.2016.
+ */
 import {Injectable} from '@angular/core'
 
-import {Post} from './post';
+import {Post} from '../post/post';
 import {Comment} from '../comment/comment';
-import {POSTS} from './posts';
+import {POSTS} from '../post/posts';
 
 
 @Injectable()
 export class PostService {
-
+    posts = POSTS;
 
     getPosts() {
-        return Promise.resolve(POSTS);
+        return Promise.resolve(this.posts);
     }
 
     addPost(Post) {
-        return POSTS.push(Post);
+        this.posts = [...this.posts,Post];
     }
 
     removePost(index: number) {
-        return POSTS.splice(index, 1);
+        return this.posts.splice(index, 1);
     }
 
     getPost(id: number) {
-        return Promise.resolve(POSTS).then(
+        return Promise.resolve(this.posts).then(
             posts => posts.filter(post => post.id === id)[0]
         );
     }

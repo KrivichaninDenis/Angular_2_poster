@@ -5,6 +5,7 @@ export class Post {
     title: string;
     link: string;
     author: string;
+    date: number;
     description: string;
     upvotes: number;
     comments: Comment[];

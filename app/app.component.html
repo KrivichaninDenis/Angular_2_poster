@@ -15,14 +15,6 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-            <li>
-                <form class="navbar-form navbar-right">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search" ngModel="searchFactory.Text">
-                        <button class="btn btn-default glyphicon glyphicon-search" aria-hidden="true"></button>
-                    </div>
-                </form>
-            </li>
             <!-- *ngIf="!isLoggedIn()" -->
             <li ><a href="/#/login"><span class="glyphicon glyphicon-log-in"></span>Log In</a>
             </li>
@@ -41,7 +33,7 @@
 <div class="body">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            <router-outlet></router-outlet>
+            <router-outlet [searchText]="searchText"></router-outlet>
         </div>
     </div>
 </div>

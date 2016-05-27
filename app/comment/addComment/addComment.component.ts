@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {PostService} from '../../post/post.service';
-import {Comment} from '../comment';
-import { RouteParams } from '@angular/router-deprecated';
+import {RouteParams} from '@angular/router-deprecated';
+
 import {Post} from '../../post/post';
+import {PostService} from '../../service/post.service';
+import {Comment} from '../comment';
 
 @Component({
   selector: 'addComment',
