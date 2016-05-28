@@ -9,7 +9,6 @@ import {AddPostComponent} from './post/addPost/addPost.component';
 import {WatchPostComponent} from './post/watchPost/watchPost.component';
 import {PostService} from './service/post.service';
 
-
 @Component({
     selector: 'app',
     templateUrl: 'app/app.component.html',

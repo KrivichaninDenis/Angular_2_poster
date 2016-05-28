@@ -1,5 +1,6 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {Router} from '@angular/router-deprecated';
+import {PaginationControlsCmp, PaginatePipe, PaginationService} from 'ng2-pagination';
 
 import {PostService} from '../service/post.service';
 import {Post} from '../post/post';
@@ -11,12 +12,19 @@ import {SearchBox} from '../search/search-box';
 
 @Component({
     selector: 'home',
-    pipes: [SearchPipe],
+    pipes: [
+      SearchPipe,
+      PaginatePipe
+    ],
     templateUrl: 'app/home/home.component.html',
     directives: [
         WatchPostComponent,
         RenderPost,
-        SearchBox
+        SearchBox,
+        PaginationControlsCmp
+    ],
+    providers:[
+      PaginationService
     ]
 })
 

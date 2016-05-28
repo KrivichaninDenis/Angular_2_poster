@@ -7,7 +7,8 @@
         'app':                        'app', // 'dist',
         'rxjs':                       'node_modules/rxjs',
         'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
-        '@angular':                   'node_modules/@angular'        
+        '@angular':                   'node_modules/@angular',
+        'ng2-pagination':             'node_modules/ng2-pagination'
     };
     // packages tells the System loader how to load when no filename and/or no extension
     var packages = {
@@ -26,6 +27,7 @@
         '@angular/router-deprecated',
         '@angular/testing',
         '@angular/upgrade',
+        'ng2-pagination'
     ];
     // add package entries for angular packages in the form '@angular/common': { main: 'index.js', defaultExtension: 'js' }
     packageNames.forEach(function(pkgName) {

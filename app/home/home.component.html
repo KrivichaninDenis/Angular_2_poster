@@ -3,9 +3,13 @@
     <h1>All Posts</h1>
     <div  class="panel-group"
       *ngFor="let post of posts
+      | paginate: { itemsPerPage: 2, currentPage: p }
       | search : [term];
          let index = index" >
         <renderPost [post]="post">
         </renderPost>
     </div>
+    <div class="is-text-centered">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
 </div>
