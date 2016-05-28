@@ -1,0 +1,43 @@
+<div class="panel panel-default ">
+    <div class="panel-heading">
+        <a href="http://{{post.link}}">
+            <h4>{{post.title}}</h4>
+        </a>
+    </div>
+
+    <blockquote>
+        <p class="lead">Description:</p>
+        <span>{{post.description}}</span>
+
+        <footer *ngIf="post.author && post.date">
+            <span>
+              {{post.author }} - <strong> Time: {{post.date | date:'medium'}}</strong>
+            </span>
+        </footer>
+    </blockquote>
+
+    <div class="panel-footer">
+        <div>
+          <!-- ng-show="isLoggedIn()" -->
+        <span  class="glyphicon glyphicon-thumbs-up"
+              (click)="upVotesPost(post)"></span>
+              <!-- ng-show="isLoggedIn()" -->
+        <span  class="glyphicon glyphicon-thumbs-down"
+              (click)="downVotesPost(post)"></span>
+              <!-- ng-show="isLoggedIn()" -->
+            <span >{{post.upvotes}}</span>
+        </div>
+        <div>
+        <span>
+            <a (click) = "selectPostComments(post)">Comments</a>
+        </span>
+
+        <span class="col-md-offset-8">
+            <button class="btn btn-warning" (click)="removePost(index)">
+                <span class="glyphicon glyphicon-trash"></span>
+                Delete
+            </button>
+        </span>
+        </div>
+    </div>
+</div>

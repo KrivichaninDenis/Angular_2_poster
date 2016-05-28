@@ -14,7 +14,7 @@ import {PostService} from './service/post.service';
     selector: 'app',
     templateUrl: 'app/app.component.html',
     directives: [
-      ROUTER_DIRECTIVES   
+      ROUTER_DIRECTIVES
     ],
     providers: [
         ROUTER_PROVIDERS,
@@ -42,5 +42,4 @@ import {PostService} from './service/post.service';
 ])
 
 export class AppComponent {
-
 }

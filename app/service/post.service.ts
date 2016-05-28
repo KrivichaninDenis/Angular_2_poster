@@ -8,12 +8,15 @@ import {Comment} from '../comment/comment';
 import {POSTS} from '../post/posts';
 
 
+
 @Injectable()
 export class PostService {
-    posts = POSTS;
+    posts:Post[] =  POSTS;
+
+    constructor(){}
 
     getPosts() {
-        return Promise.resolve(this.posts);
+       return Promise.resolve(this.posts);
     }
 
     addPost(Post) {
